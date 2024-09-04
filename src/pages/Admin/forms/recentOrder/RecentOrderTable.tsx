@@ -106,8 +106,8 @@ export default function RecentOrderTable() {
             page: page,
           },
         });
-        setRows(response.data.orders);
-        setTotalOrder(response.data.totalOrders);
+        setRows(response.data?.orders);
+        setTotalOrder(response.data?.totalOrders);
       } catch (error) {
         console.error(error);
       }
@@ -150,7 +150,7 @@ export default function RecentOrderTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => {
+            {rows?.map((row) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row._id}>
                   {columns.map((column) => {
