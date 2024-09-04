@@ -28,12 +28,11 @@ const Header = () => {
                   Register
                 </Link>
               </div>
-
-              <div className="lg:hidden">
-                <SideBar />
-              </div>
             </div>
           )}
+          <div className="lg:hidden">
+            <SideBar />
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex self-center  ">
           <ul className="menu menu-horizontal  px-1 text-sm">

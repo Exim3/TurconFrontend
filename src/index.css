@@ -26,7 +26,15 @@
 }
 /* This will change background color based on system theme */
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #333333; /* Dark mode background color */
+  body,
+  .bg-base-100 {
+    background-color: white !important; /* Dark mode background color */
+    color: black !important;
+  }
+
+  input,
+  select,
+  textarea {
+    background-color: white !important;
   }
 }
