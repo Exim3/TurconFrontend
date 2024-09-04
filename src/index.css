@@ -24,3 +24,9 @@
     @apply bg-[#D7F0FF] p-1 text-xs font-semibold rounded px-2 py-1;
   }
 }
+/* This will change background color based on system theme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333333; /* Dark mode background color */
+  }
+}
