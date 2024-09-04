@@ -183,7 +183,7 @@ const AllOrders: React.FC = () => {
       <div className="bg-[#F1F1F1]">
         <AdminHeader title={"Orders"} />
       </div>
-      <div className="bg-[#F1F1F1] px-8 pt-4 flex flex-col gap-4 pb-6">
+      <div className="bg-[#F1F1F1] px-8 pt-4 flex flex-col gap-4 pb-6 h-screen ">
         <div className="flex items-center gap-6 justify-between">
           {/* boxes */}
         </div>
