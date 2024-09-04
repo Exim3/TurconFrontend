@@ -247,7 +247,7 @@ const AllOrders: React.FC = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {rows.map((row) => {
+                  {rows?.map((row) => {
                     return (
                       <TableRow
                         hover

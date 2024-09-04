@@ -229,7 +229,7 @@ export default function ContainerTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => {
+              {rows?.map((row) => {
                 return (
                   <TableRow hover role="checkbox" tabIndex={-1} key={row._id}>
                     {columns.map((column) => {

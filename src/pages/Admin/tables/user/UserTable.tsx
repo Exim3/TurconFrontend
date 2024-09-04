@@ -206,49 +206,42 @@ export default function UserTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row) => {
-                  return (
-                    <TableRow
-                      hover
-                      role="checkbox"
-                      tabIndex={-1}
-                      key={row.email}
-                    >
-                      {columns.map((column) => {
-                        const value = row[column.id as keyof Data];
-                        return (
-                          <TableCell
-                            key={column.id}
-                            align={column.align}
-                            sx={{ padding: "8px" }}
-                          >
-                            {column.id === "action" ? (
-                              <div className="flex items-center  justify-center gap-2">
-                                <Link
-                                  to={`/viewUser/:id`}
-                                  className="w-10 h-10 flex items-center justify-center bg-[#FFFAF5] rounded-md"
-                                >
-                                  <ViewIcon size={20} />
-                                </Link>
-                                <Links
-                                  href={`mailto:${row.email}`}
-                                  underline="none"
-                                  className="w-10 h-10 flex items-center justify-center bg-[#F5FFF9] rounded-md"
-                                >
-                                  <AeroIcon size={20} />
-                                </Links>
-                              </div>
-                            ) : (
-                              value
-                            )}
-                          </TableCell>
-                        );
-                      })}
-                    </TableRow>
-                  );
-                })}
+              {rows?.map((row) => {
+                return (
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.email}>
+                    {columns.map((column) => {
+                      const value = row[column.id as keyof Data];
+                      return (
+                        <TableCell
+                          key={column.id}
+                          align={column.align}
+                          sx={{ padding: "8px" }}
+                        >
+                          {column.id === "action" ? (
+                            <div className="flex items-center  justify-center gap-2">
+                              <Link
+                                to={`/viewUser/:id`}
+                                className="w-10 h-10 flex items-center justify-center bg-[#FFFAF5] rounded-md"
+                              >
+                                <ViewIcon size={20} />
+                              </Link>
+                              <Links
+                                href={`mailto:${row.email}`}
+                                underline="none"
+                                className="w-10 h-10 flex items-center justify-center bg-[#F5FFF9] rounded-md"
+                              >
+                                <AeroIcon size={20} />
+                              </Links>
+                            </div>
+                          ) : (
+                            value
+                          )}
+                        </TableCell>
+                      );
+                    })}
+                  </TableRow>
+                );
+              })}
             </TableBody>
           </Table>
         </TableContainer>
