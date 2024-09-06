@@ -121,7 +121,7 @@ const ProductsList: React.FC<ProductsListProps> = ({ searched }) => {
   return (
     <>
       {error && <p>Error: {error}</p>}
-      {containerData.length > 0 ? (
+      {containerData?.length > 0 ? (
         <div>
           <div className="items grid sm:grid-cols-2 w-full gap-10 cursor-pointer">
             {containerData.map((item, index) => (
