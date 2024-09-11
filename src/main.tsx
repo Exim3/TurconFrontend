@@ -4,6 +4,9 @@ import App from "./App.tsx";
 import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./store/store.ts";
+import { initGA, logPageView } from "./utils/Analytics.ts";
+
+initGA();
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
@@ -14,3 +17,4 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+logPageView();
