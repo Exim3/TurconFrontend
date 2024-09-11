@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { AuthProvider } from "./utils/AuthContext";
 import { initGA, logPageView } from "./utils/Analytics";
 
+// Custom hook to log page views
 const usePageViews = () => {
   const location = useLocation();
 
@@ -14,16 +15,15 @@ const usePageViews = () => {
     logPageView();
   }, [location]);
 };
+
 const App: React.FC = () => {
   useEffect(() => {
     initGA();
   }, []);
 
-  usePageViews();
   return (
     <Router>
       <AuthProvider>
-        {/* Wrap your routes with AuthProvider */}
         <ToastContainer
           position="top-right"
           autoClose={5000}
@@ -36,11 +36,17 @@ const App: React.FC = () => {
           pauseOnHover
         />
         <ScrollToTop />
-
+        <PageViewLogger /> {/* Ensure that this is used within Router */}
         <AppRoutes />
       </AuthProvider>
     </Router>
   );
+};
+
+// Component to use page views hook
+const PageViewLogger: React.FC = () => {
+  usePageViews();
+  return null;
 };
 
 export default App;

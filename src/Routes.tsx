@@ -51,10 +51,12 @@ import CollectedOrder from "./pages/orders/CollectedOrder";
 import CancelledOrder from "./pages/orders/CancelledOrder";
 import AllOrder from "./pages/orders/AllOrder";
 import ViewOrder from "./pages/Admin/orders/ViewOrder";
+import TrackPageVisitWithLocation from "./components/TrackPageVisitWithLocation";
 
 const AppRoutes: React.FC = () => {
   return (
     <AuthProvider>
+      <TrackPageVisitWithLocation />
       <Routes>
         {/* Auth */}
         <Route path="/login" element={<Login />} />
