@@ -6,4 +6,13 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://localhost:5000", // Replace with your backend API URL
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""), // Adjust this based on your API endpoint structure
+      },
+    },
+  },
 });

@@ -103,6 +103,7 @@ const ProductsList: React.FC<ProductsListProps> = ({ searched }) => {
       console.error("Fetch containers error:", err);
     }
   };
+  console.log(containerData, "container");
 
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,

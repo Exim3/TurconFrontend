@@ -7,6 +7,8 @@ import notificationIcon from "/notification.svg";
 import profileIcon from "/profile.svg";
 import { useAuth } from "../../utils/AuthContext";
 
+console.log(import.meta.env.VITE_API_URL, "api");
+
 const ContainerHeader = () => {
   const { user } = useAuth();
   const cartvalue = useAppSelector(
